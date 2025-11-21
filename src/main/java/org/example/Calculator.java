@@ -3,19 +3,19 @@ package org.example;
 public class Calculator {
     private Calculator() {}
 
-    public static double add(double a, double b) throws InvalidInputException {
+    public static double add(double a, double b){
         return a + b;
     }
 
-    public static double subtract(double a, double b) throws InvalidInputException {
+    public static double subtract(double a, double b) {
         return a - b;
     }
 
-    public static double multiply(double a, double b) throws InvalidInputException {
+    public static double multiply(double a, double b) {
         return a * b;
     }
 
-    public static double divide(double a, double b) throws ArithmeticException, InvalidInputException {
+    public static double divide(double a, double b) throws ArithmeticException {
         if (b == 0.0) {
             throw new ArithmeticException("Не можна ділити на нуль!");
         }

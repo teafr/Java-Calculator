@@ -7,30 +7,30 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalculatorTest {
 
     @Test
-    void testAddition() throws InvalidInputException {
+    void testAddition() {
         assertEquals(5.0, Calculator.add(2, 3));
         assertEquals(0.0, Calculator.add(0, 0));
     }
 
     @Test
-    void testSubtraction() throws InvalidInputException {
+    void testSubtraction() {
         assertEquals(-1.0, Calculator.subtract(2, 3));
     }
 
     @Test
-    void testMultiplication() throws InvalidInputException {
+    void testMultiplication() {
         assertEquals(6.0, Calculator.multiply(2, 3));
         assertEquals(0.0, Calculator.multiply(0, 5));
     }
 
     @Test
-    void testDivisionByZero() throws InvalidInputException {
+    void testDivisionByZero() {
         ArithmeticException ex = assertThrows(ArithmeticException.class, () -> Calculator.divide(2, 0));
         assertEquals("Не можна ділити на нуль!", ex.getMessage());
     }
 
     @Test
-    void testDivision() throws InvalidInputException {
+    void testDivision() {
         assertEquals(2.0, Calculator.divide(6, 3));
     }
 
@@ -41,7 +41,7 @@ class CalculatorTest {
     }
 
     @Test
-    void testSqrtValid() throws InvalidInputException {
-        assertEquals(2.0, Calculator.sqrt(4));
+    void testSqrtValid() {
+        assertDoesNotThrow(() -> assertEquals(2.0, Calculator.sqrt(4)));
     }
 }
